@@ -14,7 +14,7 @@ export const FormDiv = styled.form`
 export const FormInput = styled.input`
   height: 3rem;
   width: 15rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   border: none;
   outline: none;
   text-indent: 0.5rem;
@@ -27,15 +27,17 @@ export const FormButton = styled.button`
   outline: none;
   background-color: #e1f1dd;
   margin: 5px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
 `;
 
 export const FormSelect = styled.select`
   margin: 5px;
+  padding: 0 10px;
   height: 3rem;
   border: none;
-  font-size: 2rem;
+  outline: none;
+  font-size: 1.5rem;
 `;
 
 export const HeaderDiv = styled.div`
@@ -44,10 +46,17 @@ export const HeaderDiv = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #00adb5;
+  padding: 3rem 0;
 `;
 
 export const HeaderTitle = styled.h1`
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 2.5rem;
   font-family: "Girassol", sans-serif;
+`;
+
+export const HeaderImage = styled.img`
+  width: 35%;
+  margin-top: 1.5rem;
 `;
