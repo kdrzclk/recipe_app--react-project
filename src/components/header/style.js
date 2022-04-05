@@ -55,8 +55,3 @@ export const HeaderTitle = styled.h1`
   font-size: 2.5rem;
   font-family: "Girassol", sans-serif;
 `;
-
-export const HeaderImage = styled.img`
-  width: 35%;
-  margin-top: 1.5rem;
-`;
