@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const AboutWrapper = styled.div`
+export const GithubWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -17,23 +17,19 @@ export const AboutWrapper = styled.div`
   }
 `;
 
-export const AboutImage = styled.img`
-  width: 30%;
+export const GithubImage = styled.img`
+  width: 15%;
   margin-bottom: 2rem;
   margin-top: 3rem;
 `;
 
-export const AboutTitle = styled.div`
-  margin-bottom: 2rem;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-`;
-
-export const AboutText = styled.div`
-  text-align: right;
+export const GithubText = styled.div`
+  text-align: center;
   margin: 1rem;
   border: 1px solid #fff;
   padding: 1rem 2rem;
   border-radius: 1rem;
+  line-height: 2;
   span {
     color: #fff;
     font-family: "Girassol", sans-serif;
