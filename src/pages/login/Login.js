@@ -9,10 +9,19 @@ import {
   LoginWrapper,
 } from "./style";
 import LoginImg from "../../assets/meal.svg";
+import { useNavigate } from "react-router-dom";
+// import { useState, useEffect } from "react";
 
 const Login = () => {
+  let navigate = useNavigate();
+
+  // useEffect(() => {
+  //   setIsNavbarHidden(true);
+  // }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    navigate("/");
   };
 
   return (
@@ -23,7 +32,7 @@ const Login = () => {
         <LoginForm onSubmit={handleSubmit}>
           <LoginInput type="text" placeholder="username" required />
           <LoginInput type="password" placeholder="password" required />
-          <LoginButton>Login</LoginButton>
+          <LoginButton type="submit">Login</LoginButton>
         </LoginForm>
       </LoginFormContainer>
     </LoginWrapper>

@@ -1,15 +1,37 @@
 import React from "react";
 import { FormDiv, FormInput, FormSelect, FormButton } from "./style";
 
-const Form = () => {
+const Form = ({
+  query,
+  setQuery,
+  meal,
+  setMeal,
+
+  getApi,
+}) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    query ? getApi(query, meal) : alert("Please enter a search query");
+  };
+
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleChange2 = (e) => {
+    setMeal(e.target.value);
+  };
+
   return (
-    <FormDiv>
-      <FormInput type="text" placeholder="Search" />
+    <FormDiv onSubmit={handleSubmit}>
+      <FormInput type="text" placeholder="Search" onChange={handleChange} />
       <FormButton>Search</FormButton>
-      <FormSelect>
-        <option value="breakfast">Breakfast</option>
-        <option value="lunch">Lunch</option>
-        <option value="dinner">Dinner</option>
+      <FormSelect onChange={handleChange2}>
+        <option value="breakfast">breakfast</option>
+        <option value="dinner">dinner</option>
+        <option value="lunch">lunch</option>
+        <option value="snack">snack</option>
+        <option value="teatime">teatime</option>
       </FormSelect>
     </FormDiv>
   );
