@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/header/Header";
 import { HomeImage, HomeWrapper, Meal } from "./style";
 import HomeIcon from "../../assets/home.svg";
@@ -8,7 +8,7 @@ import RecipeCard from "./RecipeCard";
 const APP_ID = "7d780e9c";
 const APP_KEY = "cf47a5aca314e0af9e273a1a1c5a035e";
 
-const Home = () => {
+const Home = ({ setShowNav, showNav }) => {
   const [query, setQuery] = useState("");
   const [meal, setMeal] = useState("");
   const [recipes, setRecipes] = useState();
@@ -20,6 +20,10 @@ const Home = () => {
     console.log(data);
     setRecipes(data.hits);
   };
+
+  useEffect(() => {
+    window.onload = setShowNav(true);
+  }, []);
 
   return (
     <HomeWrapper>

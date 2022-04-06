@@ -1,4 +1,4 @@
-// import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../components/navbar/Navbar";
 import About from "../pages/about/About";
@@ -9,17 +9,23 @@ import NotFound from "../pages/notfound/NotFound";
 import Details from "../pages/details/Details";
 
 const AppRouter = () => {
-  // var [isNavbarHidden, setIsNavbarHidden] = useState(false);
+  const [showNav, setShowNav] = useState(true);
 
   return (
     <Router>
-      {/* {isNavbarHidden ? null : <Navbar />} */}
-      <Navbar />
+      {showNav && <Navbar />}
+
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route
+          path="/"
+          element={<Home setShowNav={setShowNav} showNav={showNav} />}
+        />
         <Route path="/about" element={<About />} />
         <Route path="/github" element={<Github />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login setShowNav={setShowNav} showNav={showNav} />}
+        />
         <Route path="/details" element={<Details />} />
 
         <Route path="*" element={<NotFound />} />

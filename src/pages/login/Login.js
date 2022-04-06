@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   LoginButton,
   LoginForm,
@@ -12,12 +12,12 @@ import LoginImg from "../../assets/meal.svg";
 import { useNavigate } from "react-router-dom";
 // import { useState, useEffect } from "react";
 
-const Login = () => {
+const Login = ({ setShowNav, showNav }) => {
   let navigate = useNavigate();
 
-  // useEffect(() => {
-  //   setIsNavbarHidden(true);
-  // }, []);
+  useEffect(() => {
+    window.onload = setShowNav(!showNav);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

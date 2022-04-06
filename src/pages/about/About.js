@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { AboutImage, AboutWrapper, AboutTitle, AboutText } from "./style";
 import Coding from "../../assets/coding.svg";
 
