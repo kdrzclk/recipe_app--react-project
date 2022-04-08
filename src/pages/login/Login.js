@@ -21,7 +21,7 @@ const Login = ({ setShowNav, showNav }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/home");
   };
 
   return (

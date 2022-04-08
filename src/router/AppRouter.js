@@ -17,13 +17,13 @@ const AppRouter = () => {
 
       <Routes>
         <Route
-          path="/"
+          path="/home"
           element={<Home setShowNav={setShowNav} showNav={showNav} />}
         />
         <Route path="/about" element={<About />} />
         <Route path="/github" element={<Github />} />
         <Route
-          path="/login"
+          path="/"
           element={<Login setShowNav={setShowNav} showNav={showNav} />}
         />
         <Route path="/details" element={<Details />} />
