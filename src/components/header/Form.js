@@ -1,14 +1,7 @@
 import React from "react";
 import { FormDiv, FormInput, FormSelect, FormButton } from "./style";
 
-const Form = ({
-  query,
-  setQuery,
-  meal,
-  setMeal,
-
-  getApi,
-}) => {
+const Form = ({ mealTypes, setQuery, setMeal, query, meal, getApi }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     query ? getApi(query, meal) : alert("Please enter a search query");
@@ -26,12 +19,12 @@ const Form = ({
     <FormDiv onSubmit={handleSubmit}>
       <FormInput type="text" placeholder="Search" onChange={handleChange} />
       <FormButton type="submit">Search</FormButton>
-      <FormSelect onChange={handleChange2}>
-        <option value="breakfast">breakfast</option>
-        <option value="dinner">dinner</option>
-        <option value="lunch">lunch</option>
-        <option value="snack">snack</option>
-        <option value="teatime">teatime</option>
+      <FormSelect name="mealTypes" id="mealTypes" onChange={handleChange2}>
+        {mealTypes.map((item, index) => (
+          <option key={index} value={item.toLowerCase()}>
+            {item}
+          </option>
+        ))}
       </FormSelect>
     </FormDiv>
   );

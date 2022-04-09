@@ -10,8 +10,10 @@ const APP_KEY = "cf47a5aca314e0af9e273a1a1c5a035e";
 
 const Home = ({ setShowNav, showNav }) => {
   const [query, setQuery] = useState("");
-  const [meal, setMeal] = useState("");
   const [recipes, setRecipes] = useState();
+
+  const mealTypes = ["Breakfast", "Lunch", "Dinner", "Snack", "Teatime"];
+  const [meal, setMeal] = useState(mealTypes[0].toLowerCase());
 
   const baseURL = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&mealType=${meal}`;
 
@@ -34,6 +36,7 @@ const Home = ({ setShowNav, showNav }) => {
           meal={meal}
           setMeal={setMeal}
           getApi={getApi}
+          mealTypes={mealTypes}
         />
       }
 

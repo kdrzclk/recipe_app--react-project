@@ -2,23 +2,16 @@ import React from "react";
 import Form from "./Form";
 import { HeaderDiv, HeaderTitle } from "./style";
 
-const Header = ({
-  query,
-  setQuery,
-  meal,
-  setMeal,
-  recipes,
-  setRecipes,
-  getApi,
-}) => {
+const Header = ({ setQuery, query, meal, setMeal, getApi, mealTypes }) => {
   return (
     <HeaderDiv>
       <HeaderTitle>My Food</HeaderTitle>
       <Form
-        query={query}
         setQuery={setQuery}
-        meal={meal}
+        query={query}
+        mealTypes={mealTypes}
         setMeal={setMeal}
+        meal={meal}
         getApi={getApi}
       />
     </HeaderDiv>
