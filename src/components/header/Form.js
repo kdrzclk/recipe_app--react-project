@@ -25,7 +25,7 @@ const Form = ({
   return (
     <FormDiv onSubmit={handleSubmit}>
       <FormInput type="text" placeholder="Search" onChange={handleChange} />
-      <FormButton>Search</FormButton>
+      <FormButton type="submit">Search</FormButton>
       <FormSelect onChange={handleChange2}>
         <option value="breakfast">breakfast</option>
         <option value="dinner">dinner</option>
