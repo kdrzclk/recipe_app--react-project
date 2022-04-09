@@ -29,6 +29,11 @@ export const FormButton = styled.button`
   margin: 5px;
   font-size: 1.5rem;
   cursor: pointer;
+  &:hover {
+    background-color: #00adb5;
+    transition: all 0.3s ease-in;
+    border: 1px solid white;
+  }
 `;
 
 export const FormSelect = styled.select`
