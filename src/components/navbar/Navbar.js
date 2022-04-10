@@ -24,7 +24,11 @@ const Navbar = () => {
         <MenuItem onClick={() => setIsOpen(!isOpen)} to="/github">
           GITHUB
         </MenuItem>
-        <MenuItem onClick={() => setIsOpen(!isOpen)} to="/">
+        <MenuItem
+          onClick={() => setIsOpen(!isOpen)}
+          onMouseUp={() => sessionStorage.clear()}
+          to="/"
+        >
           LOGOUT
         </MenuItem>
       </Menu>
