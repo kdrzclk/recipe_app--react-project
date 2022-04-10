@@ -7,6 +7,7 @@ import Github from "../pages/github/Github";
 import Login from "../pages/login/Login";
 import NotFound from "../pages/notfound/NotFound";
 import Details from "../pages/details/Details";
+import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   const [showNav, setShowNav] = useState(true);
@@ -16,19 +17,33 @@ const AppRouter = () => {
       {showNav && <Navbar />}
 
       <Routes>
-        <Route
-          path="/home"
-          element={<Home setShowNav={setShowNav} showNav={showNav} />}
-        />
-        <Route path="/about" element={<About />} />
-        <Route path="/github" element={<Github />} />
+        <Route path="/home" element={<PrivateRouter />}>
+          <Route
+            path=""
+            element={<Home setShowNav={setShowNav} showNav={showNav} />}
+          />
+        </Route>
+
+        <Route path="/about" element={<PrivateRouter />}>
+          <Route path="" element={<About />} />
+        </Route>
+
+        <Route path="/github" element={<PrivateRouter />}>
+          <Route path="" element={<Github />} />
+        </Route>
+
         <Route
           path="/"
           element={<Login setShowNav={setShowNav} showNav={showNav} />}
         />
-        <Route path="/details" element={<Details />} />
 
-        <Route path="*" element={<NotFound />} />
+        <Route path="/details" element={<PrivateRouter />}>
+          <Route path="" element={<Details />} />
+        </Route>
+
+        <Route path="*" element={<PrivateRouter />}>
+          <Route path="" element={<NotFound />} />
+        </Route>
       </Routes>
     </Router>
   );

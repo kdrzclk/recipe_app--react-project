@@ -19,8 +19,13 @@ const Login = ({ setShowNav, showNav }) => {
     window.onload = setShowNav(!showNav);
   }, []);
 
+  const user = {
+    username: "user",
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    sessionStorage.setItem("user", JSON.stringify(user));
     navigate("/home");
   };
 
